@@ -4,7 +4,7 @@ args=("$@");
 
 SCRIPTNAME="./OMPSSC"
 PIDFILE=/var/run/ompssc.pid
-cd /etc/ompss
+cd /etc/ompssc
 
 if [ "${args[0]}" == "start" ]
   then
