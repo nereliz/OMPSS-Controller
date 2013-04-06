@@ -1,0 +1,36 @@
+#!/bin/bash
+# OMPSSC Startup Service script v1.0 by Nerijus Barauskas
+# USAGE: start|stop|status|logs
+#
+case "$1" in
+start)
+echo "Starting OMPSSC..."
+sudo /etc/ompssc/ompssc.sh start
+;;
+stop)
+echo "Stopping OMPSSC..."
+sudo /etc/ompssc/ompssc.sh stop
+;;
+restart)
+echo "Stopping OMPSSC..."
+sudo /etc/ompssc/ompssc.sh stop
+echo "Starting OMPSSC..."
+sudo /etc/ompssc/ompssc.sh start
+;;
+logs)
+echo "OMPSSC Logs."
+#sudo /etc/ompss/ompssc.sh log
+echo "Not implemented yet"
+;;
+status)
+# Check to see if the process is running
+echo "OMPSSC Status"
+sudo /etc/ompssc/ompssc.sh status
+;;
+ 
+*)
+echo "OMPSS Controller service"
+echo $"Usage: $0 {start|stop|status|logs}"
+exit 1
+esac
+exit 0
