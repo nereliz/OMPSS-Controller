@@ -51,6 +51,11 @@ void Controller::start()
     directory->cd( this->ipDir );
     this->ipList = directory->entryList( QDir::Files );
 
+    if( !directory->cd( this->ipDir ) || this->ipList.size() == 0 )
+    {
+        cout << "There is no nods available.\nExiting....\n";
+        exit( 0 );
+    }
     cout << "Nodes: \n";
     for( int i =0; i < this->ipList.size(); i++ )
     {
